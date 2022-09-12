@@ -16,7 +16,7 @@ class Greeter {
 First, write your feature in features/greeting.feature:
 Feature: Greeting
 
-  Scenario: Say hello
+Scenario: Say hello
     When the greeter says hello
     Then I should have heard "hello"
 Next, implement your steps in features/support/steps.js:
@@ -27,9 +27,11 @@ const { Greeter } = require('../../src')
 When('the greeter says hello', function () {
   this.whatIHeard = new Greeter().sayHello()
 });
-
 Then('I should have heard {string}', function (expectedResponse) {
   assert.equal(this.whatIHeard, expectedResponse)
 });
+
+
+
 Finally, run Cucumber:
 npm test
